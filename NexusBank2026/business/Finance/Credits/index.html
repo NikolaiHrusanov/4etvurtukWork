@@ -1746,6 +1746,653 @@
     
     
 }
+
+
+/* ===== LOAN CALCULATOR SECTION ===== */
+.loan-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.loan-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Content */
+.loan-content {
+    padding-top: 20px;
+}
+
+.loan-badge {
+    display: inline-block;
+    background: rgba(129, 140, 248, 0.15);
+    color: var(--primary);
+    padding: 8px 20px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+}
+
+.loan-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+}
+
+.loan-highlight {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.loan-new-customer {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    margin-bottom: 28px;
+}
+
+.loan-new-customer i {
+    font-size: 1.4rem;
+    color: var(--success);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.loan-new-customer p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.loan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.loan-feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.loan-feature-item i {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.loan-feature-item span {
+    flex: 1;
+}
+
+.loan-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    border-radius: var(--radius-full);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: 0 8px 25px rgba(129, 140, 248, 0.3);
+    font-family: var(--font-body);
+}
+
+.loan-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(129, 140, 248, 0.4);
+}
+
+.loan-cta-btn:active {
+    transform: translateY(0);
+}
+
+.loan-cta-btn i {
+    transition: transform var(--transition-fast);
+}
+
+.loan-cta-btn:hover i {
+    transform: translateX(4px);
+}
+
+/* Right Calculator - MORE SQUARE/RECTANGLE DESIGN */
+.loan-calculator {
+    perspective: 1000px;
+    max-width: 420px;
+    margin-left: auto;
+}
+
+.calculator-card {
+    background: var(--surface);
+    border: 2px solid var(--border-light);
+    border-radius: 4px;
+    padding: 32px 28px;
+    box-shadow: var(--shadow-xl);
+    width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Monthly Payment Display - EXTENDED BACKGROUND BOX */
+.monthly-payment {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 0 0 16px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(129, 140, 248, 0.2);
+    border-radius: 0;
+}
+
+.monthly-label {
+    display: block;
+    color: var(--text-tertiary);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.monthly-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 3px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.currency {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.amount {
+    font-size: 2.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    transition: all 0.2s ease;
+    letter-spacing: -1px;
+}
+
+.period {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+/* Loan Amount Summary */
+.loan-amount-summary {
+    text-align: center;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    background: var(--bg-primary);
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+}
+
+.loan-amount-label {
+    display: block;
+    color: var(--text-tertiary);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 2px;
+}
+
+.loan-amount-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Slider Groups */
+.slider-group {
+    margin-bottom: 16px;
+}
+
+.slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.slider-header label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slider-value {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-medium);
+    color: var(--primary);
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: var(--surface-elevated);
+    outline: none;
+    margin-bottom: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: var(--primary);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: all 0.15s ease;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(129, 140, 248, 0.5);
+}
+
+.slider::-webkit-slider-thumb:active {
+    transform: scale(1.05);
+    background: var(--primary-dark);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background: var(--primary);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.slider-range {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-tertiary);
+    font-size: 0.65rem;
+    font-weight: 500;
+}
+
+/* Loan Summary */
+.loan-summary {
+    background: var(--bg-primary);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-light);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    font-size: 0.8rem;
+}
+
+.summary-row:first-child {
+    padding-top: 0;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 9px;
+}
+
+.summary-row:last-child {
+    padding-bottom: 0;
+    padding-top: 9px;
+}
+
+.summary-row span:first-child {
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+.summary-value {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* Protection Section */
+.protection-section {
+    background: rgba(129, 140, 248, 0.05);
+    border: 1px solid rgba(129, 140, 248, 0.2);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+}
+
+.protection-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.protection-header > i {
+    font-size: 1.1rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.protection-header > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.protection-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.8rem;
+}
+
+.protection-desc {
+    color: var(--text-tertiary);
+    font-size: 0.7rem;
+}
+
+/* Toggle Switch - SQUARE */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--surface-elevated);
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+input:checked + .toggle-slider {
+    background: var(--primary);
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(18px);
+}
+/* Extended Background Inner Box */
+.calculator-inner-box {
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.06), rgba(167, 139, 250, 0.06));
+    border: 1px solid rgba(129, 140, 248, 0.15);
+    border-radius: 4px;
+    padding: 20px 18px 14px 18px;
+    margin-bottom: 14px;
+}
+/* Calculator CTA */
+.calculator-cta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    font-family: var(--font-body);
+    margin-top: auto;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calculator-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(129, 140, 248, 0.3);
+}
+
+.calculator-cta:active {
+    transform: translateY(0);
+}
+
+.calculator-cta i {
+    transition: transform var(--transition-fast);
+}
+
+.calculator-cta:hover i {
+    transform: translateX(4px);
+}
+
+/* Calculator Responsive - UPDATED BREAKPOINTS */
+@media (max-width: 968px) {
+    .loan-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .loan-calculator {
+        max-width: 440px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .calculator-card {
+        width: 100%;
+        height: auto;
+        min-height: 480px;
+        padding: 28px 24px;
+    }
+    
+    .loan-title {
+        font-size: 2.2rem;
+    }
+    
+    /* Mobile Menu - Text below icons */
+    .mobile-tab {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: transparent;
+        border: none;
+        color: var(--text-tertiary);
+        font-weight: 500;
+        font-size: 0.75rem;
+        border-radius: var(--radius-lg);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        white-space: nowrap;
+        border: 1px solid transparent;
+        flex-shrink: 0;
+        min-height: auto;
+        min-width: 70px;
+    }
+
+    .mobile-tab i {
+        font-size: 1.4rem;
+        pointer-events: none;
+        display: block;
+    }
+
+    .mobile-tab.active {
+        background: rgba(129, 140, 248, 0.15);
+        color: var(--primary);
+        border-color: rgba(129, 140, 248, 0.3);
+    }
+    
+    .mobile-tabs {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: var(--space-sm);
+        padding-bottom: var(--space-xs);
+        min-width: min-content;
+        justify-content: space-around;
+    }
+    
+    .mobile-tabs-container {
+        padding: var(--space-md) var(--space-sm);
+        border-bottom: 1px solid var(--border-light);
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        flex-shrink: 0;
+    }
+
+    .mobile-tabs-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .loan-section {
+        padding: 40px 16px;
+    }
+    
+    .loan-container {
+        gap: 32px;
+    }
+    
+    .loan-title {
+        font-size: 1.8rem;
+    }
+    
+    .loan-calculator {
+        max-width: 100%;
+    }
+    
+    .calculator-card {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 24px 18px;
+        border-radius: var(--radius-md);
+    }
+    
+    .amount {
+        font-size: 2.4rem;
+    }
+    
+    .monthly-amount {
+        padding: 12px 16px;
+    }
+    
+    .loan-features {
+        gap: 14px;
+    }
+    
+    .loan-feature-item {
+        font-size: 0.9rem;
+    }
+    
+    .loan-cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+    
+    /* Mobile Menu - Smaller text below icons */
+    .mobile-tab {
+        padding: 10px 12px;
+        font-size: 0.7rem;
+        gap: 6px;
+        min-width: 60px;
+    }
+
+    .mobile-tab i {
+        font-size: 1.2rem;
+    }
+    
+    .mobile-tabs-container {
+        padding: var(--space-sm) var(--space-xs);
+    }
+}
+
 </style>
 </head>
 <body>
@@ -2088,6 +2735,131 @@
 
 
 
+<!-- ===== LOAN CALCULATOR SECTION ===== -->
+<section class="loan-section">
+    <div class="loan-container">
+        <!-- Left Content -->
+        <div class="loan-content">
+            <span class="loan-badge">100% online</span>
+            <h2 class="loan-title">Get a loan up to <span class="loan-highlight">€40,000</span> in minutes</h2>
+            
+            <div class="loan-new-customer">
+                <i class="fas fa-lock-open"></i>
+                <p>New to NexusBank? Apply today and unlock special rates for eligible customers.*</p>
+            </div>
+            
+            <ul class="loan-features">
+                <li class="loan-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>No application review fees</span>
+                </li>
+                <li class="loan-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Apply using only your ID</span>
+                </li>
+                <li class="loan-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Flexible repayment options designed around your needs</span>
+                </li>
+                <li class="loan-feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Pause your monthly payments up to 2 times per year**</span>
+                </li>
+            </ul>
+            
+            <button class="loan-cta-btn">
+                Apply Now <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+       <!-- Right Calculator -->
+<div class="loan-calculator">
+    <div class="calculator-card">
+        <!-- Extended Background Box -->
+        <div class="calculator-inner-box">
+            <!-- Monthly Payment Display -->
+            <div class="monthly-payment">
+                <span class="monthly-label">Monthly Payment</span>
+                <div class="monthly-amount">
+                    <span class="currency">€</span>
+                    <span class="amount" id="monthlyPayment">250</span>
+                    <span class="period">/mo</span>
+                </div>
+            </div>
+            
+            <!-- Loan Amount Summary -->
+            <div class="loan-amount-summary">
+                <span class="loan-amount-label">Your Loan Amount</span>
+                <span class="loan-amount-value" id="loanAmountDisplay">€20,000</span>
+            </div>
+            
+            <!-- Loan Amount Slider -->
+            <div class="slider-group">
+                <div class="slider-header">
+                    <label for="loanAmount">Loan Amount</label>
+                    <span class="slider-value" id="loanAmountValue">€20,000</span>
+                </div>
+                <div class="slider-wrapper">
+                    <input type="range" id="loanAmount" class="slider" 
+                           min="1000" max="40000" step="500" value="20000">
+                    <div class="slider-range">
+                        <span>€1,000</span>
+                        <span>€40,000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Repayment Term Slider -->
+            <div class="slider-group">
+                <div class="slider-header">
+                    <label for="repaymentTerm">Repayment Term</label>
+                    <span class="slider-value" id="termValue">5 years</span>
+                </div>
+                <div class="slider-wrapper">
+                    <input type="range" id="repaymentTerm" class="slider" 
+                           min="12" max="120" step="12" value="60">
+                    <div class="slider-range">
+                        <span>12 months</span>
+                        <span>120 months</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Loan Summary -->
+        <div class="loan-summary">
+            <div class="summary-row">
+                <span>Total Repayment</span>
+                <span class="summary-value" id="totalRepayment">€15,000</span>
+            </div>
+            <div class="summary-row">
+                <span>Interest Rate</span>
+                <span class="summary-value" id="interestRate">5.3% APR</span>
+            </div>
+        </div>
+        
+        <!-- Protection Option -->
+        <div class="protection-section">
+            <div class="protection-header">
+                <i class="fas fa-shield-halved"></i>
+                <div>
+                    <span class="protection-title">Loan Protection</span>
+                    <span class="protection-desc">Secure your repayments</span>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="protectionToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+        
+        <button class="calculator-cta">
+            Continue to Application <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+</div>
+    </div>
+</section>
   <script>
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -2795,6 +3567,182 @@
         
         console.log('✅ All bugs fixed! Icons-only mode dropdowns now work with clicks!');
     });
+
+  // ============================================================
+// LOAN CALCULATOR FUNCTIONALITY (UPDATED RATES + MONTHS)
+// ============================================================
+
+function initLoanCalculator() {
+    const loanAmountSlider = document.getElementById('loanAmount');
+    const repaymentTermSlider = document.getElementById('repaymentTerm');
+    const monthlyPaymentDisplay = document.getElementById('monthlyPayment');
+    const loanAmountValue = document.getElementById('loanAmountValue');
+    const termValue = document.getElementById('termValue');
+    const totalRepaymentDisplay = document.getElementById('totalRepayment');
+    const interestRateDisplay = document.getElementById('interestRate');
+    const protectionToggle = document.getElementById('protectionToggle');
+    const loanAmountDisplay = document.getElementById('loanAmountDisplay');
+    
+    if (!loanAmountSlider || !repaymentTermSlider) {
+        console.error('Loan calculator sliders not found!');
+        return;
+    }
+    
+    console.log('✅ Loan calculator initialized');
+    
+    // UPDATED: Interest rates from 20% (1 year) to 15.5% (10 years)
+    // These rates decrease gradually with longer terms
+    const baseRates = {
+        12: 20.0,    // 1 year (12 months)
+        24: 19.2,    // 2 years (24 months)
+        36: 18.5,    // 3 years (36 months)
+        48: 17.9,    // 4 years (48 months)
+        60: 17.3,    // 5 years (60 months)
+        72: 16.8,    // 6 years (72 months)
+        84: 16.3,    // 7 years (84 months)
+        96: 15.9,    // 8 years (96 months)
+        108: 15.7,   // 9 years (108 months)
+        120: 15.5    // 10 years (120 months)
+    };
+    
+    // Protection adds 0.5% to rate
+    const protectionRateIncrease = 0.5;
+    
+    function formatCurrency(amount) {
+        return '€' + Math.round(amount).toLocaleString('en-US');
+    }
+    
+    function calculateLoan() {
+        // Get current values directly from the sliders
+        const loanAmount = parseInt(loanAmountSlider.value);
+        const termMonths = parseInt(repaymentTermSlider.value);
+        const protectionEnabled = protectionToggle ? protectionToggle.checked : false;
+        
+        console.log('Calculating - Loan:', loanAmount, 'Term (months):', termMonths);
+        
+        // Get base interest rate based on months
+        let interestRate = baseRates[termMonths] || 17.3; // Default to 5-year rate if not found
+        
+        // If exact months not in our rate table, interpolate
+        if (!baseRates[termMonths]) {
+            // Find closest rates for interpolation
+            const availableMonths = Object.keys(baseRates).map(Number).sort((a, b) => a - b);
+            let lowerMonth = availableMonths[0];
+            let upperMonth = availableMonths[availableMonths.length - 1];
+            
+            for (let i = 0; i < availableMonths.length - 1; i++) {
+                if (termMonths >= availableMonths[i] && termMonths <= availableMonths[i + 1]) {
+                    lowerMonth = availableMonths[i];
+                    upperMonth = availableMonths[i + 1];
+                    break;
+                }
+            }
+            
+            if (lowerMonth !== upperMonth) {
+                const lowerRate = baseRates[lowerMonth];
+                const upperRate = baseRates[upperMonth];
+                const ratio = (termMonths - lowerMonth) / (upperMonth - lowerMonth);
+                interestRate = lowerRate + (upperRate - lowerRate) * ratio;
+            }
+        }
+        
+        // Add protection rate if enabled
+        if (protectionEnabled) {
+            interestRate += protectionRateIncrease;
+        }
+        
+        // Calculate monthly payment using amortization formula
+        const monthlyRate = interestRate / 100 / 12;
+        const numberOfPayments = termMonths;
+        
+        let monthlyPayment;
+        if (monthlyRate === 0) {
+            monthlyPayment = loanAmount / numberOfPayments;
+        } else {
+            monthlyPayment = loanAmount * 
+                (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
+                (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+        }
+        
+        const totalRepayment = monthlyPayment * numberOfPayments;
+        
+        // Calculate years and months for display
+        const years = Math.floor(termMonths / 12);
+        const months = termMonths % 12;
+        let termDisplayText = '';
+        
+        if (years > 0 && months > 0) {
+            termDisplayText = years + 'y ' + months + 'm';
+        } else if (years > 0) {
+            termDisplayText = years + (years === 1 ? ' year' : ' years');
+        } else {
+            termDisplayText = months + (months === 1 ? ' month' : ' months');
+        }
+        
+        // Update all display values
+        if (monthlyPaymentDisplay) {
+            monthlyPaymentDisplay.textContent = Math.round(monthlyPayment).toLocaleString('en-US');
+        }
+        
+        if (loanAmountValue) {
+            loanAmountValue.textContent = formatCurrency(loanAmount);
+        }
+        
+        if (loanAmountDisplay) {
+            loanAmountDisplay.textContent = formatCurrency(loanAmount);
+        }
+        
+        if (termValue) {
+            termValue.textContent = termDisplayText;
+        }
+        
+        if (totalRepaymentDisplay) {
+            totalRepaymentDisplay.textContent = formatCurrency(totalRepayment);
+        }
+        
+        if (interestRateDisplay) {
+            interestRateDisplay.textContent = interestRate.toFixed(1) + '% APR';
+        }
+        
+        // Add pulse animation to monthly payment
+        if (monthlyPaymentDisplay) {
+            monthlyPaymentDisplay.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                monthlyPaymentDisplay.style.transform = 'scale(1)';
+            }, 150);
+        }
+        
+        console.log('Monthly Payment:', Math.round(monthlyPayment), 'Rate:', interestRate.toFixed(1) + '%');
+    }
+    
+    // Event listeners
+    loanAmountSlider.addEventListener('input', function() {
+        console.log('Loan slider moved to:', this.value);
+        calculateLoan();
+    });
+    
+    repaymentTermSlider.addEventListener('input', function() {
+        console.log('Term slider moved to:', this.value, 'months');
+        calculateLoan();
+    });
+    
+    loanAmountSlider.addEventListener('change', calculateLoan);
+    repaymentTermSlider.addEventListener('change', calculateLoan);
+    
+    if (protectionToggle) {
+        protectionToggle.addEventListener('change', calculateLoan);
+    }
+    
+    // Initial calculation
+    calculateLoan();
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLoanCalculator);
+} else {
+    initLoanCalculator();
+}
 </script>
 
 </body>
